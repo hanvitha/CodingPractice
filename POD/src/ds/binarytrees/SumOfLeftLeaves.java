@@ -21,14 +21,13 @@ public class SumOfLeftLeaves {
 	}
 
 	private static int printSumOfLeftLeaves( Node root,boolean leftFlag) {
-		int sum =0;
 		if(root==null)
 			return 0;
 		if(root.left==null &&root.right==null && leftFlag){
 			return root.value;
 		}
 		else{
-			return sum + printSumOfLeftLeaves(root.left,true) + printSumOfLeftLeaves(root.right,false);
+			return printSumOfLeftLeaves(root.left,true) + printSumOfLeftLeaves(root.right,false);
 		}
 	}
 

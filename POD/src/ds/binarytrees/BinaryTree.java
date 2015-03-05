@@ -16,9 +16,22 @@ public class BinaryTree {
 		Btree.insert(6);
 		Btree.insert(8);
 		Btree.insert(1);
-		System.out.println(Btree);
-
+		Btree.preorder();
 	}
+	
+	public void preorder() {
+		inorderTrav(root);
+	}
+
+	private void inorderTrav(Node root) {
+		if(root==null) return;
+		
+		System.out.print(root.value+" ");
+		
+		inorderTrav(root.left);
+		inorderTrav(root.right);
+	}
+
 	public class Node{
 		int value;
 		Node left;
@@ -53,5 +66,6 @@ public class BinaryTree {
 				insertNode(val, node.right);
 		}
 	}
+	
 
 }
